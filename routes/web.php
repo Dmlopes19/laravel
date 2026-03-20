@@ -5,7 +5,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/',[App\Http\Controllers\PrincipalController::class,'principal'])->name('site.index');
 Route::get('/sobreNos', [App\Http\Controllers\SobreNosController::class,'sobreNos'])->name('site.sobrenos');
 Route::get('/contato', [App\Http\Controllers\ContatoController::class,'contato'])->name('site.contato'); // metodo get
-Route::post('/contato',[App\Http\Controllers\ContatoController::class,'contato'])->name('site.contato'); // metodo post
+Route::post('/contato', [App\Http\Controllers\ContatoController::class, 'salvar'])->name('site.contato'); // metodo post
 Route::get('/login', function(){return 'login';})->name('site.login');
 
 //metodo prefix prefixando o endereco e depois o metodo group agrupando co a funcão de callback o retante da rota neste endereço prefixado.
